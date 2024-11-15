@@ -30,7 +30,7 @@ Implement room details view
 Display room capacity, equipment, and available timeslots
 Design and implement the room browsing and details pages
 
-Member/s Assigned :
+Member/s Assigned : Maryam 
 --------------------------------------------------------------------
 
 
