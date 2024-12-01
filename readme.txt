@@ -52,7 +52,7 @@ Implement room schedule management
 Design and implement the admin interface
 
 
-Member/s Assigned : Ahmed 
+Member/s Assigned : Albader
 --------------------------------------------------------------------
 
 
