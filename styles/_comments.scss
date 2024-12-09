@@ -1,0 +1,278 @@
+.room {
+    &__comments {
+        background: var(--navbar-bg);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: var(--navbar-shadow);
+        transition: all 0.3s ease;
+
+        &-title {
+            font-size: 1.75rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        &-form {
+            margin-bottom: 2rem;
+            
+            button {
+                margin-top: 1rem;
+                padding: 0.75rem 1.5rem;
+                background: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        &-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            background: var(--surface);
+            color: var(--text);
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+            }
+
+            &::placeholder {
+                color: var(--text-secondary);
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+
+    &__comment {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 1.5rem;
+        padding: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: var(--surface);
+        }
+
+        &-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid var(--primary);
+            }
+
+            span {
+                color: var(--text);
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+        }
+
+        &-input {
+            width: 100%;
+            padding: 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            background: var(--surface);
+            color: var(--text);
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+                background: var(--navbar-bg);
+            }
+
+            &::placeholder {
+                color: var(--text-secondary);
+                opacity: 0.8;
+            }
+
+            &:hover {
+                border-color: var(--primary);
+                background: var(--navbar-bg);
+            }
+                @media (max-width: $breakpoint-mobile) {
+                    min-height: 100px;
+                    padding: 1rem;
+                    font-size: 0.95rem;
+                }
+            }
+        &-content {
+            p {
+                color: var(--text);
+                margin-bottom: 0.75rem;
+                line-height: 1.6;
+            }
+
+            small {
+                color: var(--text-secondary);
+                font-size: 0.875rem;
+            }
+        }
+
+        &-delete {
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            height: 30px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            border-radius: 0.375rem;
+
+            &:hover {
+                color: var(--error-text);
+                background: var(--error-bg);
+            }
+
+            i {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1rem;
+
+            &-user {
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &-delete {
+                justify-self: flex-end;
+                padding: 0.375rem;
+            }
+        }
+    }
+
+
+    &__reply {
+        margin-left: 3rem;
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        background: var(--surface);
+        border-radius: 0.75rem;
+        border-left: 3px solid var(--primary);
+        transition: all 0.3s ease;
+
+        &-context {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+
+            span {
+                color: var(--primary);
+                font-weight: 500;
+            }
+        }
+
+        .room__comment-user {
+            img {
+                width: 35px;
+                height: 35px;
+                border: 2px solid var(--primary);
+            }
+
+            span {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__reply-form {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--surface);
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+
+        &.hidden {
+            display: none;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--navbar-bg);
+            color: var(--text);
+            min-height: 100px;
+            resize: vertical;
+            margin-bottom: 1rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+            }
+        }
+    }
+
+    &__comment-reply {
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 0.875rem;
+        padding: 0.5rem 0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--text);
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        &__reply {
+            margin-left: 1.5rem;
+            padding: 1rem;
+        }
+    }
+}

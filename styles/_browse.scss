@@ -1,0 +1,66 @@
+.browser {
+    padding: 4rem 2rem;
+    transition: background-color 0.3s ease;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    &__search {
+        width: 100%;
+        max-width: 400px;
+
+        &-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--navbar-bg);
+            color: var(--text);
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+            }
+
+            &::placeholder {
+                color: var(--text-secondary);
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    &__error {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        background: var(--error-bg);
+        color: var(--error-text);
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+}

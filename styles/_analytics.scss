@@ -1,0 +1,185 @@
+.analytics {
+    min-height: calc(100vh - $navbar-height);
+    background: var(--surface);
+    transition: all 0.3s ease;
+    padding: 2rem;
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .filters {
+        background: var(--navbar-bg);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: var(--navbar-shadow);
+        margin-bottom: 2rem;
+
+        .date-filter {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+
+            @media (max-width: $breakpoint-mobile) {
+                flex-direction: column;
+            }
+
+            .form-group {
+                flex: 1;
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: var(--text);
+                    font-weight: 500;
+                    font-size: 0.875rem;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 2px solid var(--border);
+                    border-radius: 0.5rem;
+                    background: var(--surface);
+                    color: var(--text);
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: var(--primary);
+                        box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+                    }
+                }
+            }
+
+            .filter-btn {
+                padding: 0.75rem 1.5rem;
+                background: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                min-width: 120px;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: var(--navbar-shadow);
+                }
+            }
+        }
+    }
+
+    .stats-card {
+        background: var(--navbar-bg);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: var(--navbar-shadow);
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &::before {
+                content: '';
+                width: 4px;
+                height: 1.25rem;
+                background: var(--primary);
+                border-radius: 2px;
+                display: inline-block;
+            }
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 1rem;
+
+            th, td {
+                padding: 1rem;
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+            }
+
+            th {
+                color: var(--text-secondary);
+                font-weight: 500;
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            td {
+                color: var(--text);
+                font-size: 0.875rem;
+            }
+
+            tbody tr {
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background: var(--surface);
+                }
+
+                &:last-child td {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 0.5rem;
+            background: var(--border);
+            border-radius: 0.25rem;
+            overflow: hidden;
+
+            .progress {
+                height: 100%;
+                background: var(--primary);
+                border-radius: 0.25rem;
+                transition: width 0.3s ease;
+            }
+        }
+
+        .no-data {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 2rem;
+            font-size: 0.875rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 1rem;
+
+        .stats-card {
+            padding: 1rem;
+
+            .stats-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+
+                th, td {
+                    padding: 0.75rem;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
