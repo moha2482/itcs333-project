@@ -10,7 +10,7 @@ Create login functionality
 Develop advanced validation for UoB emails
 Design and implement the registration and login pages
 
-Member/s Assigned : Ziyad
+Member/s Assigned : Mohamed
 --------------------------------------------------------------------
 
 
@@ -20,7 +20,7 @@ Implement profile editing functionality
 Create profile picture upload and management
 Design and implement the user profile pages
 
-Member/s Assigned : Mohamed
+Member/s Assigned : Ziyad
 --------------------------------------------------------------------
 
 
