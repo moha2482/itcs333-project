@@ -1,0 +1,26 @@
+@import "_login.scss";
+@import "_navbar.scss";
+@import "_homepage.scss";
+@import "_profile.scss";
+@import "_dashboard.scss";
+@import "_bookings.scss";
+@import "_analytics.scss";
+@import "_signup.scss";
+@import '_hero.scss';
+@import '_browse.scss';
+@import '_roomcard.scss';
+@import '_room.scss';
+@import '_messages.scss';
+@import '_comments.scss';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--surface);
+}
